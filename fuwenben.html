@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <div id="#div3"></div>
+    <button id="btn">获取并设置内容</button>
+    <div id="content"></div>
+</body>
+<script src="node_modules/wangeditor/release/wangEditor.js"></script>
+
+<script>
+    var E = window.wangEditor
+    var editor2 = new E('#div3')
+    editor2.create()
+
+    var btn = document.getElementById('btn')
+    var content = document.getElementById('content')
+    btn.onclick = function() {
+        var html = editor2.txt.html()
+        content.innerHTML = html
+        console.log(html)
+    }
+</script>
+</html>
